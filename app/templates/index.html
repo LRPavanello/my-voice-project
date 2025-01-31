@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto para Áudio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <!-- Espaço para anúncios -->
+        <div class="ads-container ads-left">Anúncio</div>
+
+        <!-- Conteúdo principal -->
+        <div class="container">
+            <h1>Transforme Texto em Áudio</h1>
+
+            <!-- Formulário para gerar áudio -->
+            <div class="form-container">
+                <textarea id="textToSpeech" placeholder="Digite o texto aqui..."></textarea>
+                <button onclick="generateAudio()">Gerar Áudio</button>
+            </div>
+
+            <!-- Player de áudio -->
+            <audio id="audioPlayer" controls></audio>
+
+            <!-- Gravação de voz -->
+            <div class="record-container">
+                <button onclick="startRecording()">Gravar minha voz</button>
+                <button onclick="stopRecording()">Parar Gravação</button>
+                <p id="status"></p>
+            </div>
+            
+            <!-- Enviar gravação -->
+            <div class="send-record-container">
+                <h2>Enviar Gravação</h2>
+                <div class="send-record-container-box">
+                    <input type="file" id="audioFile" accept="audio/mp3">
+                    <button onclick="sendAudio()">Enviar Arquivo MP3</button>
+                    <p id="uploadStatus"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Espaço para anúncios -->
+        <div class="ads-container ads-right">Anúncio</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
