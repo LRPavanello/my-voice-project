@@ -69,6 +69,8 @@ To run the Flask application, use one of the following commands in the terminal:
 
 To start the Flask development server, execute the following command:
 
+flask --app app.main run
+
 This command will start the Flask app with the entry point defined in `app.main`. By default, it will run the app in development mode on `http://127.0.0.1:5000`.
 
 ### 2. Run the Application with Debug Mode
@@ -78,8 +80,6 @@ To run the application with debug mode enabled, which allows for automatic reloa
 
 Alternatively, if you prefer to directly call the `app.run()` method, use this command:
 
-
-flask --app app.main run
 
 flask --app app.main --debug run app.run
 
