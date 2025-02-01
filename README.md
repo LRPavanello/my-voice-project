@@ -1,10 +1,4 @@
 
-
-flask --app app.main run
-
-flask --app app.main --debug run app.run
-
-
 # My Voice Project
 
 ## Description
@@ -83,6 +77,11 @@ To run the application with debug mode enabled, which allows for automatic reloa
 
 
 Alternatively, if you prefer to directly call the `app.run()` method, use this command:
+
+
+flask --app app.main run
+
+flask --app app.main --debug run app.run
 
 
 This will start the Flask app with debug mode enabled, which is useful during development for faster testing and debugging.
