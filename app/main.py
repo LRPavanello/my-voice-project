@@ -2,7 +2,18 @@ from flask import Flask, request, jsonify, send_file, render_template
 from gtts import gTTS
 import os
 
-app = Flask(__name__)
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+UPLOAD_FOLDER = os.path.join(BASE_DIR, '../uploads')
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+app = Flask(__name__, 
+            static_folder=os.path.join(BASE_DIR, '../static'), 
+            template_folder=os.path.join(BASE_DIR, '../templates'))
+
+app.config['FLASK_ENV'] = 'development'
+# Ativando o modo de depuração
+app.config["DEBUG"] = True
 
 @app.route("/")
 def home():
@@ -35,4 +46,4 @@ def upload_audio():
     return jsonify({'message': 'Áudio armazenado com sucesso!'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
